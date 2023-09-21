@@ -174,7 +174,6 @@ static dispatch_queue_t YYTextAsyncLayerGetReleaseQueue() {
                 }
                 task.display(context.CGContext, size, isCancelled);
                 if (isCancelled()) {
-                    UIGraphicsEndImageContext();
                     dispatch_async(dispatch_get_main_queue(), ^{
                         if (task.didDisplay) task.didDisplay(self, NO);
                     });
